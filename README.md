@@ -83,6 +83,8 @@ movie-database-app/
 ├── public/              # Static assets
 ├── src/
 │   ├── components/      # Reusable components (SearchBar, MovieCard, MovieDetails)
+    ├── Pages/ 
+    pages(HomePage,SearchPage,DetailPage)
 │   ├── App.js           # Main component
 │   ├── index.js         # Entry point
 │
