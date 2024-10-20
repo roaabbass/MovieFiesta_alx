@@ -1,19 +1,19 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import HomePage from './pages/HomePage';
-import SearchPage from './pages/SearchPage';
-import DetailsPage from './pages/DetailsPage';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import SearchPage from "./pages/SearchPage";
+import MovieDetailPage from "./pages/MovieDetailPage";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/details/:id" element={<DetailsPage />} />
+        <Route path="/movie/:id" element={<MovieDetailPage />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

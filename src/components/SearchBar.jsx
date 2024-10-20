@@ -1,13 +1,29 @@
-const SearchBar = ({ onSearch }) => (
-    <div className="p-4">
+import { useState } from "react";
+
+const SearchBar = ({ onSearch }) => {
+  const [query, setQuery] = useState("");
+
+  const handleSearch = () => {
+    if (query.trim()) onSearch(query);
+  };
+
+  return (
+    <div className="flex items-center p-4 bg-secondary rounded-md">
       <input
         type="text"
-        placeholder="Search for a movie..."
-        className="w-full p-2 rounded-md bg-gray-800 text-white"
-        onKeyDown={(e) => e.key === 'Enter' && onSearch(e.target.value)}
+        className="flex-grow p-2 rounded-l-md"
+        placeholder="Search for movies, TV series..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
       />
+      <button
+        className="bg-primary text-white px-4 rounded-r-md"
+        onClick={handleSearch}
+      >
+        Search
+      </button>
     </div>
   );
-  
-  export default SearchBar;
-  
+};
+
+export default SearchBar;
