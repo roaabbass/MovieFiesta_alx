@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => (
-    <nav className="bg-gray-900 text-white p-4 flex justify-between">
-      <h1 className="text-2xl font-bold">MovieFiesta</h1>
-      <div>
-        <a href="/" className="px-4">Home</a>
-        <a href="/search" className="px-4">Search</a>
-      </div>
-    </nav>
-  );
-  
-  export default Navbar;
-  
+  <nav className="flex items-center justify-between p-4 bg-primary text-white">
+    <h1 className="text-2xl font-bold">MovieFiesta</h1>
+    <div className="space-x-4">
+      <Link to="/" className="hover:text-secondary">Home</Link>
+      <Link to="/search" className="hover:text-secondary">Search</Link>
+    </div>
+  </nav>
+);
+
+export default Navbar;

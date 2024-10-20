@@ -1,10 +1,11 @@
-const MovieCard = ({ movie, onClick }) => (
-    <div className="p-2 w-60 bg-gray-700 text-white rounded-md" onClick={() => onClick(movie)}>
-      <img src={movie.Poster} alt={movie.Title} className="rounded-md" />
-      <h3 className="mt-2 font-semibold">{movie.Title}</h3>
-      <p>{movie.Year}</p>
-    </div>
-  );
-  
-  export default MovieCard;
-  
+import { Link } from "react-router-dom";
+
+const MovieCard = ({ movie }) => (
+  <Link to={`/movie/${movie.id}`} className="block">
+    <img src={movie.poster} alt={movie.title} className="rounded-md" />
+    <h3 className="text-white font-semibold">{movie.title}</h3>
+    <p className="text-gray-400">{movie.year}</p>
+  </Link>
+);
+
+export default MovieCard;
