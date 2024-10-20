@@ -1,21 +1,21 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import SearchPage from "./pages/SearchPage";
-import MovieDetailPage from "./pages/MovieDetailsPage";
+// src/App.jsx
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import SearchPage from './pages/SearchPage';
+import DetailsPage from './pages/DetailsPage';
+import Navbar from './components/Navbar';
 
-import Navbar from "./components/Navbar";
-
-function App() {
+const App = () => {
   return (
-    <Router>
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/movie/:id" element={<MovieDetailPage />} />
+        <Route path="/details/:id" element={<DetailsPage />} />
       </Routes>
-    </Router>
+    </div>
   );
-}
+};
 
 export default App;
